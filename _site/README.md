@@ -1,7 +1,5 @@
 # Clowder Web Pages - https://clowderframework.org/
 
-** Not deployed yet **
-
 Clowder community web pages developed in Jekyll.
 
 To run `bundle exec jekyll serve`

@@ -23,7 +23,7 @@
 <loc>http://localhost:4000/demo.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/docs.html</loc>
+<loc>http://localhost:4000/documentation.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/faq.html</loc>
@@ -33,5 +33,13 @@
 </url>
 <url>
 <loc>http://localhost:4000/posts/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/docs/Clowder-CLA.pdf</loc>
+<lastmod>2016-10-20T10:50:06-05:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/docs/Clowder-CoC.pdf</loc>
+<lastmod>2016-10-20T13:51:33-05:00</lastmod>
 </url>
 </urlset>

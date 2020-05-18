@@ -21,6 +21,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://clowderframework.org/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ClowderFramewrk
 github_username: clowder-framework
+youtube_channel: "https://www.youtube.com/channel/UC3Wkm8t146gSTYyzjSR600g"
 slack: "https://join.slack.com/t/clowder-software/shared_invite/enQtMzQzOTg0Nzk3OTUzLTYwZDlkZDI0NGI4YmI0ZjE5MTZiYmZhZTIyNWE1YzM0NWMwMzIxODNhZTA1Y2E3MTQzOTg1YThiNzkwOWQwYWE"
 docker: "https://hub.docker.com/orgs/clowder"
 # google_analytics:

@@ -7,7 +7,7 @@ background: '/PATH_TO_IMAGE'
 
 - [FAQ]({% link faq.md %})
     + Answers to common questions.
-- [Docs](https://clowder-framework.readthedocs.io/en/docs/)
+- [Docs](https://clowder-framework.readthedocs.io/en/latest/)
     + More *formal* documentation for users and developers. Very much a work in progress.
 - [Wiki](https://opensource.ncsa.illinois.edu/confluence/display/CATS)
     + Wiki pages include *less formal* documentation for users, developers and admin. You will find the most up to date information, but it might be in draft form.

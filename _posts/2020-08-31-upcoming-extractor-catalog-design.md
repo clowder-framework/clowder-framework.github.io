@@ -23,7 +23,7 @@ Our main goals in this process are to empower users to more easily:
 
 
 ### Full Design Notes Available
-For more details, notes, and mockups, you can find the full design notes here: https://opensource.ncsa.illinois.edu/confluence/display/CATS/Extractor+Catalog
+For more details, notes, and mockups, you can find the full design notes [here](https://opensource.ncsa.illinois.edu/confluence/display/CATS/Extractor+Catalog). 
 
 ## Want to Contribute?
 Do you have ideas or other contributions to the discussion? Fantastic!

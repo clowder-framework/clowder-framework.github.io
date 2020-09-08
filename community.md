@@ -5,7 +5,7 @@ description: How to contribute to the Clowder community.
 background: '/PATH_TO_IMAGE'
 ---
 
-There are many ways to get involved in the Clowder community. Below we have identified a few ways and pointers to get started. *The easiest way to get more information is to join us on [Slack][slack].* Before participating, please take a momente to [read our Code of Conduct](https://github.com/clowder-framework/clowder/blob/develop/CODE_OF_CONDUCT.md).
+There are many ways to get involved in the Clowder community. Below we have identified a few ways and pointers to get started. *The easiest way to get more information is to join us on [Slack][slack].* Before participating, please take a momente to [read our Code of Conduct](https://github.com/clowder-framework/clowder/blob/master/CODE_OF_CONDUCT.md).
 
 Depending on your brackground and skill set there are many ways in which you can contribute the Clowder framework. 
 

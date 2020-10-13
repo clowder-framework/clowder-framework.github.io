@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Documentation
-description: Resources for users and developers to learn about Clowder.
+description: Resources for users and developers
 background: '/PATH_TO_IMAGE'
 ---
 

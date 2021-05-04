@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    v1.8 Released - Clowder Framework
+    
+  </title>
+
+  <meta name="description" content="1.8.0 - 2019-11-06 Warning: This update adds a new permission for archiving files and adds it to the Admin role. Please make sure to run Clowder with the MON...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2019/11/06/v1.8.html">
+  <link rel="alternate" type="application/rss+xml" title="Clowder Framework" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Clowder Framework</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/projects.html">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/documentation.html">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/community">Community</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/demo.html">Demo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/clowder-framework">GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+<header class="masthead" style="background-image: url('')">
+  
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h4>v1.8 Released</h4>
+            
+            <h2 class="subheading">Improvements to search interface, ability to pass in parameters to extrators from the web interface, and more.</h2>
+            
+            <span class="meta">Posted by
+              <a href="#">Luigi Marini</a>
+              on November 06, 2019 &middot; <span class="reading-time" title="Estimated read time">
+  
+   5 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <h2 id="180---2019-11-06">1.8.0 - 2019-11-06</h2>
+<p><strong><em>Warning:</em> This update adds a new permission for archiving files and adds it to the Admin role. Please make sure
+to run Clowder with the <code class="language-plaintext highlighter-rouge">MONGOUPDATE</code> flag set to update the database.</strong></p>
+
+<h3 id="changed">Changed</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">/api/search</code> endpoint now returns JSON objects describing each result rather than just the ID. This endpoint has three
+new parameters - from, size, and page. The result JSON objects will also return pagination data such as next and 
+previous page if Elasticsearch plugin is enabled and these parameters are used.</li>
+  <li>S3ByteStorageService now uses AWS TransferManager for saving bytes - uploads larger than ~1GB should now save more reliably.</li>
+  <li><code class="language-plaintext highlighter-rouge">/api/search</code> endpoint now returns JSON objects describing each result rather than just the ID.</li>
+  <li>Clean up docker build. Use new buildkit to speed up builds. Store version/branch/git as environment variables in 
+docker image so that they can be inspected at runtime with Docker.</li>
+  <li>Extractors are now in their own docker-compose file. Use Traefik for proxy. Use env file for setting options.</li>
+  <li>Utilize bulk get methods for resources widely across the application, including checking permissions for many resources
+at once. Several instances where checks for resource existence were being done multiple times (e.g. in a method and then
+in another method the first one calls) to reduce MongoDB query load. These bulk requests will also report any missing
+IDs in the requested list so developers can handle those appropriately if needed.</li>
+  <li>Removed mini icons for resource types on tiles.
+<a href="https://opensource.ncsa.illinois.edu/jira/browse/CATS-1031">CATS-1031</a></li>
+  <li>Cleaned up pages to list and enable extractors. Added description of what the page does. Added links to extraction info 
+pages. Removed authors from table.</li>
+</ul>
+
+<h3 id="added">Added</h3>
+<ul>
+  <li>Ability to pass runtime parameters to an extractor, with a UI form dynamically generated UI from extractor_info.json.
+<a href="https://opensource.ncsa.illinois.edu/jira/browse/CATS-1019">CATS-1019</a></li>
+  <li>Infinite scrolling on search return pages.</li>
+  <li>Trigger archival process automatically based on when a file was last viewed/downloaded and the size of the file.</li>
+  <li>Script to check if mongodb/rabbitmq is up and running, used by Kubernetes Helm chart.</li>
+  <li>Queuing system that allows services such as Elasticsearch and RabbitMQ to store requested actions in MongoDB
+for handling asynchronously, allowing API calls to return as soon as the action is queued rather than waiting for
+the action to complete.</li>
+  <li>New extractors monitor docker image to monitor extraction queues. Monitor app includes UI that shows selected 
+information about the extractors</li>
+  <li>New <code class="language-plaintext highlighter-rouge">/api/thumbnails/:id</code> endpoint to download a thumbnail image from ID found in search results.</li>
+  <li>New utility methods in services to retrieve multiple MongoDB resources in one query instead of iterating over a list.</li>
+  <li>Support for MongoDB 3.6 and below. This required the removal of aggregators which can result in
+operations taking a little longer. This is needed to support Clowder as a Kubernetes Helm chart.
+<a href="https://opensource.ncsa.illinois.edu/jira/browse/CATS-806">CATS-806</a></li>
+  <li>New Tree view as a tab in home page to navigate resources as a hiearchical tree (spaces, collections, datasets, 
+folders and files). The tree is lazily loaded using a new endpoint <code class="language-plaintext highlighter-rouge">api/tree/getChildrenOfNode</code>.</li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+<ul>
+  <li>Downloading metrics reports would fail due to timeout on large databases. Report CSVs are now streamed
+to the client as they are generated instead of being generated on the server and sent at the end.</li>
+  <li>Social accounts would not properly be added to a space after accepting an email invite to join it.</li>
+  <li>Fixed bug where extractors monitor will not print error, but just return 0 if queue is not found.</li>
+  <li>Pagination controls are now vertically aligned and use unescaped ampersands.</li>
+  <li>Changing the page size on dataset, collection, space listings would not properly update elements visible on the page.
+<a href="https://opensource.ncsa.illinois.edu/jira/browse/CATS-1030">CATS-1030</a></li>
+  <li>Added a max of 100 status messages on the  page listing all extractions. Before this trying to list all extractions in 
+the system was causing the JVM to run out of memory.
+<a href="https://opensource.ncsa.illinois.edu/jira/browse/CATS-1032">CATS-1032</a></li>
+  <li>Added padding to the top of the footer so that the superadmin notification does not cover buttons and the buttons
+at the end of forms are not too close to the footer and difficult to see.</li>
+</ul>
+
+
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          
+          <a class="btn btn-primary float-right" href="/2020/02/05/v1.8.1.html" data-toggle="tooltip" data-placement="top" title="v1.8.1 Released">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="https://join.slack.com/t/clowder-software/shared_invite/enQtMzQzOTg0Nzk3OTUzLTYwZDlkZDI0NGI4YmI0ZjE5MTZiYmZhZTIyNWE1YzM0NWMwMzIxODNhZTA1Y2E3MTQzOTg1YThiNzkwOWQwYWE">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-slack fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/clowder-framework">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="mailto:clowder@lists.illinois.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://hub.docker.com/orgs/clowder">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-docker fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/ClowderFramewrk">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.youtube.com/channel/UC3Wkm8t146gSTYyzjSR600g">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Clowder Framework 2021</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>

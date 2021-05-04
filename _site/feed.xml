@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-05-04T09:44:30-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Clowder Framework</title><subtitle>Open Source Data Management for Long Tail Data</subtitle><author><name>Clowder Framework</name></author><entry><title type="html">v1.12.0 released</title><link href="http://localhost:4000/2020/11/04/v1.12.0.html" rel="alternate" type="text/html" title="v1.12.0 released" /><published>2020-11-04T00:00:00-06:00</published><updated>2020-11-04T00:00:00-06:00</updated><id>http://localhost:4000/2020/11/04/v1.12.0</id><content type="html" xml:base="http://localhost:4000/2020/11/04/v1.12.0.html">&lt;p&gt;v1.12.0 has been released! This release includes a variety of improvements and new features:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Global extractors page now shows more information, including submission metrics, logs (using Graylog), job history and extractors maturity. Extractors can be grouped using labels. User can filter list of extractors by labels, space, trigger and metadata key.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/blog/extractors-list.png&quot; class=&quot;img-fluid mx-auto d-block border&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Users have more refined options to set extractors triggers at the space level.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/blog/extractors-space.png&quot; class=&quot;img-fluid mx-auto d-block border&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Faster downloads and less CPU usage at the cost of slightly more memory use.&lt;/li&gt;
+  &lt;li&gt;Support for parsing and query of Date and Numeric data in new metadata fields.&lt;/li&gt;
+  &lt;li&gt;New user storage reports on a per space basis and ability to query by date range.&lt;/li&gt;
+  &lt;li&gt;New 3D models previewer for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*.ply&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*.nxz&lt;/code&gt; files.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For more information please see &lt;a href=&quot;https://github.com/clowder-framework/clowder/releases/tag/v1.12.0&quot;&gt;release notes&lt;/a&gt;.&lt;/p&gt;</content><author><name>Luigi Marini</name></author><summary type="html">v1.12.0 has been released! This release includes a variety of improvements and new features:</summary></entry><entry><title type="html">Webinar Nov. 6th, 2020</title><link href="http://localhost:4000/2020/11/02/webinar.html" rel="alternate" type="text/html" title="Webinar Nov. 6th, 2020" /><published>2020-11-02T00:00:00-06:00</published><updated>2020-11-02T00:00:00-06:00</updated><id>http://localhost:4000/2020/11/02/webinar</id><content type="html" xml:base="http://localhost:4000/2020/11/02/webinar.html">&lt;p&gt;Next Clowder Webinar is &lt;strong&gt;Friday, November 6, 2020 at 11:00 CST&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://opensource.ncsa.illinois.edu/confluence/display/CATS/All+Paws+Webinars&quot;&gt;Join us by Zoom&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Rob Kooper&lt;/strong&gt;, Lead Research Programmer, will discuss &lt;strong&gt;Helm Deployment of Clowder&lt;/strong&gt;. Kubernetes has become the de-facto standard for docker orchestration, and helm a well-established method for deploying applications. We will describe the helm chart that can be used to quickly install clowder in kubernetes. We will go over the customization options as well as how to upgrade clowder.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Mark Fredrickson&lt;/strong&gt;, Research Programmer, will discuss &lt;strong&gt;Clowder Transformations Catalog&lt;/strong&gt;. The Transformations Catalog is designed as a catalog for extractors that may be used with Clowder. People can submit created extractors for advertisement to the wider Clowder community.&lt;/p&gt;
+
+&lt;p&gt;If you would like to watch the webinar afterwards, check &lt;a href=&quot;https://www.youtube.com/channel/UC3Wkm8t146gSTYyzjSR600g&quot;&gt;YouTube Channel&lt;/a&gt;.&lt;/p&gt;</content><author><name>Luigi Marini</name></author><summary type="html">Next Clowder Webinar is Friday, November 6, 2020 at 11:00 CST.</summary></entry><entry><title type="html">Extractor Catalog Design</title><link href="http://localhost:4000/2020/08/31/upcoming-extractor-catalog-design.html" rel="alternate" type="text/html" title="Extractor Catalog Design" /><published>2020-08-31T00:00:00-05:00</published><updated>2020-08-31T00:00:00-05:00</updated><id>http://localhost:4000/2020/08/31/upcoming-extractor-catalog-design</id><content type="html" xml:base="http://localhost:4000/2020/08/31/upcoming-extractor-catalog-design.html">&lt;h2 id=&quot;extractor-catalog-design&quot;&gt;Extractor Catalog Design&lt;/h2&gt;
+
+&lt;p&gt;We are in the process of designing an improved Extractor Catalog view to help users discover extractors that are accessible to them and to see which ones others are using within their community.&lt;/p&gt;
+
+&lt;h3 id=&quot;high-level-goals&quot;&gt;High-Level Goals&lt;/h3&gt;
+&lt;p&gt;Our main goals in this process are to empower users to more easily:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Organize and sort your community’s extractors as the number available grows with labels and filters&lt;/li&gt;
+  &lt;li&gt;Discover new extractors that are already running and accessible to the community&lt;/li&gt;
+  &lt;li&gt;Track statistics, metrics, and history for individual extractors&lt;/li&gt;
+  &lt;li&gt;Debug and find support when problems are encountered with an extractor&lt;/li&gt;
+  &lt;li&gt;Foster community building by allowing users to rate and comment on extractors&lt;/li&gt;
+  &lt;li&gt;Learn about and keep up-to-date on the details of extractors as they evolve over time&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;full-design-notes-available&quot;&gt;Full Design Notes Available&lt;/h3&gt;
+&lt;p&gt;For more details, notes, and mockups, you can find the full design notes &lt;a href=&quot;https://opensource.ncsa.illinois.edu/confluence/display/CATS/Extractor+Catalog&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;want-to-contribute&quot;&gt;Want to Contribute?&lt;/h2&gt;
+&lt;p&gt;Do you have ideas or other contributions to the discussion? Fantastic!&lt;/p&gt;
+
+&lt;p&gt;Feel free to do any or all of the following:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Sign up for an account on &lt;a href=&quot;https://opensource.ncsa.illinois.edu/confluence/#all-updates&quot;&gt;NCSA OpenSource&lt;/a&gt; using the signup link at the right side of the page. This will allow you to login and comment directly on the &lt;a href=&quot;https://opensource.ncsa.illinois.edu/confluence/display/CATS/Extractor+Catalog&quot;&gt;Extractor Catalog design wiki&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Reach out on the &lt;a href=&quot;https://clowder-software.slack.com&quot;&gt;Clowder Slack&lt;/a&gt; to discuss ideas and new features.&lt;/li&gt;
+  &lt;li&gt;File new issues and submit back pull requests on the &lt;a href=&quot;https://github.com/clowder-framework/clowder&quot;&gt;Clowder GitHub Repository&lt;/a&gt; for improving existing features.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Have a nice day! :)&lt;/p&gt;</content><author><name>Mike Lambert</name></author><summary type="html">Extractor Catalog Design</summary></entry><entry><title type="html">v1.10.1 Released</title><link href="http://localhost:4000/2020/07/16/v1.10.1.html" rel="alternate" type="text/html" title="v1.10.1 Released" /><published>2020-07-16T00:00:00-05:00</published><updated>2020-07-16T00:00:00-05:00</updated><id>http://localhost:4000/2020/07/16/v1.10.1</id><content type="html" xml:base="http://localhost:4000/2020/07/16/v1.10.1.html">&lt;h2 id=&quot;1101---2020-07-16&quot;&gt;1.10.1 - 2020-07-16&lt;/h2&gt;
+
+&lt;h3 id=&quot;fixed&quot;&gt;Fixed&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Queue threads (e.g. Elasticsearch indexer) will no longer crash permanently if the queue connection to Mongo is lost temporarily.&lt;/li&gt;
+  &lt;li&gt;Docker images would not build correctly on GitHub.&lt;/li&gt;
+  &lt;li&gt;If monitor HTTP server would crash, it would not restart correctly.&lt;/li&gt;
+  &lt;li&gt;Don’t call server side twice when rendering list of files on dataset page.
+&lt;a href=&quot;https://github.com/clowder-framework/clowder/issues/7&quot;&gt;#7&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Fixed Sphinx build errors and switched to using pipenv. Now building docs on &lt;a href=&quot;https://clowder-framework.readthedocs.io/en/latest/&quot;&gt;readthedocs&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;added&quot;&gt;Added&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;GitHub artifacts can be uploaded using SCP to remote server.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Luigi Marini</name></author><summary type="html">1.10.1 - 2020-07-16</summary></entry><entry><title type="html">v1.10.0 Released</title><link href="http://localhost:4000/2020/06/30/v1.10.0.html" rel="alternate" type="text/html" title="v1.10.0 Released" /><published>2020-06-30T00:00:00-05:00</published><updated>2020-06-30T00:00:00-05:00</updated><id>http://localhost:4000/2020/06/30/v1.10.0</id><content type="html" xml:base="http://localhost:4000/2020/06/30/v1.10.0.html">&lt;h2 id=&quot;1100---2020-06-30&quot;&gt;1.10.0 - 2020-06-30&lt;/h2&gt;
+
+&lt;h3 id=&quot;added&quot;&gt;Added&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ability to mark multiple files in a dataset and perform bulk operations (download, tag, delete) on them at once.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;fixed&quot;&gt;Fixed&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Return thumbnail as part of the file information.
+&lt;a href=&quot;https://github.com/clowder-framework/clowder/issues/8&quot;&gt;#8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Datasets layout on space page would sometimes have overlapping tiles.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;changed&quot;&gt;Changed&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;mongo-init script with users would return with exit code -1 if user exists, now returns exit code 0.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Luigi Marini</name></author><summary type="html">1.10.0 - 2020-06-30</summary></entry><entry><title type="html">v1.9.0 Released</title><link href="http://localhost:4000/2020/06/01/v1.9.0.html" rel="alternate" type="text/html" title="v1.9.0 Released" /><published>2020-06-01T00:00:00-05:00</published><updated>2020-06-01T00:00:00-05:00</updated><id>http://localhost:4000/2020/06/01/v1.9.0</id><content type="html" xml:base="http://localhost:4000/2020/06/01/v1.9.0.html">&lt;h2 id=&quot;190---2020-06-01&quot;&gt;1.9.0 - 2020-06-01&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Warning:&lt;/em&gt; This update modifies information stored in Elasticsearch used for text based searching. To take advantage 
+of these changes a reindex of Elasticsearch is required. A reindex can be started by an admin from the Admin menu.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;added&quot;&gt;Added&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ability to delete extractor, both from API and GUI.
+&lt;a href=&quot;https://opensource.ncsa.illinois.edu/jira/browse/CATS-1044&quot;&gt;CATS-1044&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Add tags endpoint now returns the added tags.
+&lt;a href=&quot;https://opensource.ncsa.illinois.edu/jira/browse/CATS-1053&quot;&gt;CATS-1053&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Ability to search by creator name and email address for all resources.&lt;/li&gt;
+  &lt;li&gt;List Spaces/Datasets/Collections created by each user on their User Profile page.
+&lt;a href=&quot;https://opensource.ncsa.illinois.edu/jira/browse/CATS-1056&quot;&gt;CATS-1056&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Allow user to easily flip through the files in a dataset.
+&lt;a href=&quot;https://opensource.ncsa.illinois.edu/jira/browse/CATS-1058&quot;&gt;CATS-1058&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Ability to filter files and folders in a dataset when sorting is enabled.&lt;/li&gt;
+  &lt;li&gt;Visualize existing relations between datasets on the dataset page. This can be extended other resource types.
+&lt;a href=&quot;https://opensource.ncsa.illinois.edu/jira/browse/CATS-1000&quot;&gt;CATS-1000&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;S3ByteStorageService verifies bucket existence on startup and creates it if it does not exist.
+&lt;a href=&quot;https://opensource.ncsa.illinois.edu/jira/browse/CATS-1057&quot;&gt;CATS-1057&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Can now switch storage provider in Docker compose, for example S3 storage. See env.example for configuration options.&lt;/li&gt;
+  &lt;li&gt;Script to test extractions through the API.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;fixed&quot;&gt;Fixed&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;When adding tags to a section of an image, show the new tag without having to refresh the page.
+&lt;a href=&quot;https://opensource.ncsa.illinois.edu/jira/browse/CATS-1053&quot;&gt;CATS-1053&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;changed&quot;&gt;Changed&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Removed buttons to remove datasets from spaces and collections from certain pages. Moved Remove button for 
+subcollections to right side of page to be consistent with other pages.
+&lt;a href=&quot;https://opensource.ncsa.illinois.edu/jira/browse/CATS-1055&quot;&gt;CATS-1055&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Upgraded swagger documentation to openapi v3.0.1.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Luigi Marini</name></author><summary type="html">1.9.0 - 2020-06-01</summary></entry><entry><title type="html">v1.8.4 Released</title><link href="http://localhost:4000/2020/05/15/v1.8.4.html" rel="alternate" type="text/html" title="v1.8.4 Released" /><published>2020-05-15T00:00:00-05:00</published><updated>2020-05-15T00:00:00-05:00</updated><id>http://localhost:4000/2020/05/15/v1.8.4</id><content type="html" xml:base="http://localhost:4000/2020/05/15/v1.8.4.html">&lt;h2 id=&quot;184---2020-05-15&quot;&gt;1.8.4 - 2020-05-15&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Warning:&lt;/em&gt; This update modifies how information is stored in Elasticsearch for text based searching. To take advantage 
+of these changes a reindex of Elasticsearch is required. This can be started by an admin either from GUI or through the API.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;fixed&quot;&gt;Fixed&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Fixed a bug related to improper indexing of files in nested subfolders, which could also affect searching by parent dataset.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Luigi Marini</name></author><summary type="html">1.8.4 - 2020-05-15 Warning: This update modifies how information is stored in Elasticsearch for text based searching. To take advantage of these changes a reindex of Elasticsearch is required. This can be started by an admin either from GUI or through the API.</summary></entry><entry><title type="html">v1.8.3 Released</title><link href="http://localhost:4000/2020/04/28/v1.8.3.html" rel="alternate" type="text/html" title="v1.8.3 Released" /><published>2020-04-28T00:00:00-05:00</published><updated>2020-04-28T00:00:00-05:00</updated><id>http://localhost:4000/2020/04/28/v1.8.3</id><content type="html" xml:base="http://localhost:4000/2020/04/28/v1.8.3.html">&lt;h2 id=&quot;183---2020-04-28&quot;&gt;1.8.3 - 2020-04-28&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Warning:&lt;/em&gt; This update modifies how information is stored in Elasticsearch for text based searching. To take advantage 
+of these changes a reindex of Elasticsearch is required. This can be started by an admin either from GUI or through the API.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;changed&quot;&gt;Changed&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Elasticsearch indexer will now store new metadata fields as strings to avoid unexpected behavior on date fields.&lt;/li&gt;
+  &lt;li&gt;When reindexing use a temporary index to reindex while the current one is in use then swap.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;fixed&quot;&gt;Fixed&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ability to delete tags from sections and files on the file page. 
+&lt;a href=&quot;https://opensource.ncsa.illinois.edu/jira/browse/CATS-1046&quot;&gt;CATS-1046&lt;/a&gt;
+&lt;a href=&quot;https://opensource.ncsa.illinois.edu/jira/browse/CATS-1042&quot;&gt;CATS-1042&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;User-owned resources will now appear in search results regardless of space permissions.&lt;/li&gt;
+  &lt;li&gt;Updating space ownership for datasets and collections will correctly reindex those resources for searches.&lt;/li&gt;
+  &lt;li&gt;Missing index in statistics which would slow down system when inserting download/views.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;added&quot;&gt;Added&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;GitHub Actions to compile and test the code base, create documentation and docker images.&lt;/li&gt;
+  &lt;li&gt;Code of Conduct as MD file (will be displayed by GitHub).&lt;/li&gt;
+  &lt;li&gt;Templates for Bug, Feature and Pull Request on GitHub.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Luigi Marini</name></author><summary type="html">1.8.3 - 2020-04-28 Warning: This update modifies how information is stored in Elasticsearch for text based searching. To take advantage of these changes a reindex of Elasticsearch is required. This can be started by an admin either from GUI or through the API.</summary></entry><entry><title type="html">v1.8.2 Released</title><link href="http://localhost:4000/2020/02/19/v1.8.2.html" rel="alternate" type="text/html" title="v1.8.2 Released" /><published>2020-02-19T00:00:00-06:00</published><updated>2020-02-19T00:00:00-06:00</updated><id>http://localhost:4000/2020/02/19/v1.8.2</id><content type="html" xml:base="http://localhost:4000/2020/02/19/v1.8.2.html">&lt;h2 id=&quot;182---2020-02-19&quot;&gt;1.8.2 - 2020-02-19&lt;/h2&gt;
+
+&lt;h3 id=&quot;fixed&quot;&gt;Fixed&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Use the passed-in length within S3ByteStorageService.save.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Luigi Marini</name></author><summary type="html">1.8.2 - 2020-02-19</summary></entry><entry><title type="html">v1.8.1 Released</title><link href="http://localhost:4000/2020/02/05/v1.8.1.html" rel="alternate" type="text/html" title="v1.8.1 Released" /><published>2020-02-05T00:00:00-06:00</published><updated>2020-02-05T00:00:00-06:00</updated><id>http://localhost:4000/2020/02/05/v1.8.1</id><content type="html" xml:base="http://localhost:4000/2020/02/05/v1.8.1.html">&lt;h2 id=&quot;181---2020-02-05&quot;&gt;1.8.1 - 2020-02-05&lt;/h2&gt;
+
+&lt;h3 id=&quot;removed&quot;&gt;Removed&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Removed unused RDF libraries. This was probably used by the rdf/xml functionality that was removed a while back but 
+the dependencies were never removed.&lt;/li&gt;
+  &lt;li&gt;Removed Jena validation of JSON-LD metadata. It was creating a blank graph and clients couldn’t upload metadata when 
+Clowder runs in a location that doesn’t not have access to https://clowderframework.org/contexts/metadata.jsonld.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;added&quot;&gt;Added&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Scripts to migrate files on disk AWS S3.
+&lt;a href=&quot;https://opensource.ncsa.illinois.edu/jira/browse/CATS-1034&quot;&gt;CATS-1034&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;changed&quot;&gt;Changed&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Include collection prefix in path when saving to S3.&lt;/li&gt;
+  &lt;li&gt;Include length of file in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FileService&lt;/code&gt; when saving the bytes to any backend service. This helps optimize S3 implementation.&lt;/li&gt;
+  &lt;li&gt;Upgraded sbt from 0.13.0 to 0.13.6 to fix build failures.
+&lt;a href=&quot;https://opensource.ncsa.illinois.edu/jira/browse/CATS-1038&quot;&gt;CATS-1038&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Luigi Marini</name></author><summary type="html">1.8.1 - 2020-02-05</summary></entry></feed>

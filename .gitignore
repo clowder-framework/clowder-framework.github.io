@@ -2,6 +2,5 @@
 .jekyll-metadata
 .idea
 .DS_Store
-_site
 .jekyll-cache
 vendor/bundle

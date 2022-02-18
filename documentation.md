@@ -13,8 +13,9 @@ background: '/PATH_TO_IMAGE'
     + Wiki pages include *less formal* documentation for users, developers and admin. You will find the most up to date information, but it might be in draft form.
 - [API Docs](https://clowder.ncsa.illinois.edu/swagger/?url=https://clowder.ncsa.illinois.edu/clowder/swagger)
     + For users who want to develop Clowder clients using a variety of programmin languages.
-- [Webinar Recordings](https://www.youtube.com/channel/UC3Wkm8t146gSTYyzjSR600g)
-    + Many of the webinars recordings include information about the core componets of the framework organized by topic. 
+- [YouTube](https://www.youtube.com/channel/UC3Wkm8t146gSTYyzjSR600g)
+    + All Paws community meetings and webinar recordings. Recordings include information about the core components of the framework organized by topic. 
+- [All Paws 2021 Agenda]({% link allpaws2021.html %})
 
 <div class="row">
     <div class="col mx-auto my-5">

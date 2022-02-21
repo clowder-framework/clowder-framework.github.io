@@ -63,6 +63,12 @@
 <loc>http://localhost:4000/faq.html</loc>
 </url>
 <url>
+<loc>http://localhost:4000/gsoc_cg.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gsoc_projects.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
